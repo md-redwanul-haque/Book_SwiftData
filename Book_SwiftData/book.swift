@@ -5,7 +5,7 @@
 //  Created by Redwan on 2/11/24.
 //
 
-import Foundation
+import SwiftUI
 import SwiftData
 
 
@@ -41,6 +41,18 @@ class Book{
         self.status = status
     }
     
+    var icon: Image {
+        switch status {
+            
+        case .onShelf:
+            Image(systemName: "checkmark.diamond.fill")
+        case .inProgress:
+            Image(systemName: "book.fill")
+        case .Completed:
+            Image(systemName: "books.vertical.fill")
+            
+        }
+    }
     
 }
 

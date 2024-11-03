@@ -6,18 +6,56 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct BookListView: View {
+    @Query(sort: \Book.title) var books: [Book]
+    @Environment(\.modelContext) var context
+    
     @State var createNewBook = false
     var body: some View {
         NavigationStack{
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+            Group{
+                if books.isEmpty {
+                    ContentUnavailableView("Enter Your first Book" , systemImage: "book.fill")
+                } else {
+                    List{
+                        ForEach(books){ book in
+                            NavigationLink{
+                                Text(book.author)
+                            } label: {
+                                HStack(spacing: 10){
+                                    book.icon
+                                    VStack(alignment: .leading){
+                                        Text(book.title).font(.title2)
+                                        Text(book.author).foregroundStyle(.secondary)
+                                        if let rating = book.rating{
+                                          HStack{
+                                                ForEach(0..<rating, id: \.self){
+                                                    _ in
+                                                    Image(systemName: "star.fill")
+                                                        .imageScale(.small)
+                                                        .foregroundStyle(.yellow)
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .onDelete{
+                            indexSet in indexSet.forEach{
+                                index in let book = books[index]
+                                context.delete(book)
+                            }
+                        }
+                    }
+                }
             }
-            .padding()
+            
+            .listStyle(.plain)
             .navigationTitle("My Books")
             .toolbar{
                 Button{
@@ -33,10 +71,12 @@ struct BookListView: View {
                     
                 }
             }
+        
         }
     }
 }
 
 #Preview {
     BookListView()
+        .modelContainer(for: Book.self, inMemory:  true)
 }

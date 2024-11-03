@@ -12,13 +12,15 @@ struct NewBookView: View {
     @Environment(\.modelContext) var context
     @State var title = ""
     @State var author = ""
+    @State var rating = ""
     var body: some View {
         NavigationStack{
             Form{
                 TextField("Book Title", text: $title)
                 TextField("Author", text: $author)
+                TextField("Rating", value: $rating, formatter: NumberFormatter() )
                 Button("Create"){
-                    let newBook = Book(title: title, author: author)
+                    let newBook = Book(title: title, author: author, rating: Int(rating))
                     context.insert(newBook)
                     dismiss()
                 }

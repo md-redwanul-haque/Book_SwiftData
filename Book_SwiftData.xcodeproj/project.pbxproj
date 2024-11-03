@@ -13,6 +13,7 @@
 		8C68FFA32CD5F4A60084826E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C68FFA22CD5F4A60084826E /* Preview Assets.xcassets */; };
 		8C68FFAA2CD5F57E0084826E /* book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C68FFA92CD5F57E0084826E /* book.swift */; };
 		8C68FFAC2CD609AE0084826E /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C68FFAB2CD609AD0084826E /* NewBookView.swift */; };
+		8CB67DD02CD77A9C00F4D3DA /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB67DCF2CD77A9C00F4D3DA /* EditBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8C68FFA22CD5F4A60084826E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C68FFA92CD5F57E0084826E /* book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = book.swift; sourceTree = "<group>"; };
 		8C68FFAB2CD609AD0084826E /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
+		8CB67DCF2CD77A9C00F4D3DA /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				8C68FF9B2CD5F4A50084826E /* Book_SwiftDataApp.swift */,
 				8C68FF9D2CD5F4A50084826E /* BookListView.swift */,
+				8CB67DCF2CD77A9C00F4D3DA /* EditBookView.swift */,
 				8C68FF9F2CD5F4A60084826E /* Assets.xcassets */,
 				8C68FFA12CD5F4A60084826E /* Preview Content */,
 				8C68FFA92CD5F57E0084826E /* book.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C68FFAC2CD609AE0084826E /* NewBookView.swift in Sources */,
+				8CB67DD02CD77A9C00F4D3DA /* EditBookView.swift in Sources */,
 				8C68FF9E2CD5F4A50084826E /* BookListView.swift in Sources */,
 				8C68FF9C2CD5F4A50084826E /* Book_SwiftDataApp.swift in Sources */,
 				8C68FFAA2CD5F57E0084826E /* book.swift in Sources */,
