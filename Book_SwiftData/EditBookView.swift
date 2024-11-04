@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct EditBookView: View {
+    //let book: Book
+    @State var status = Status.onShelf
+    @State private var  rating: Int?
+    @State var title = ""
+    @State var author = ""
+    @State var summary = ""
+    @State var dateAdded = Date.distantPast
+    @State var dateStarted = Date.distantPast
+    @State var dateCompleted = Date.distantPast
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text("Status")
+            Picker("Status", selection: $status){
+                ForEach(Status.allCases){
+                    status in Text(status.descr).tag(status)
+                }
+            }
+            .buttonStyle(.bordered)
+        }
+        VStack(alignment: .leading)
+        {
+            GroupBox{
+                
+                LabeledContent{
+                    DatePicker("",selection: $dateAdded, displayedComponents: .date)
+                }label: {
+                    Text("Date Added ")
+                }
+                
+            }
+            
+            
+        }
+           
+        
+            
+        
     }
 }
 
